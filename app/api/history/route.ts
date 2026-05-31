@@ -12,3 +12,15 @@ export async function GET() {
     );
   }
 }
+
+export async function DELETE() {
+  try {
+    await aiRequestService.deleteAll();
+    return NextResponse.json({ success: true });
+  } catch {
+    return NextResponse.json(
+      { error: "Failed to clear history" },
+      { status: 500 }
+    );
+  }
+}

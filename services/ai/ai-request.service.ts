@@ -21,4 +21,12 @@ export const aiRequestService = {
       select: { createdAt: true },
     });
   },
+
+  delete(id: string) {
+    return prisma.aIRequest.delete({ where: { id } });
+  },
+
+  deleteAll() {
+    return prisma.aIRequest.deleteMany();
+  },
 };
