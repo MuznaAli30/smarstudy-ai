@@ -1,36 +1,139 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 📘 SmartStudy AI
 
-## Getting Started
+An AI-powered full-stack study assistant that helps students generate explanations, quizzes, and study plans using LLMs.
 
-First, run the development server:
+---
 
-```bash
+## 🚀 Live Demo
+https://6a1cbdd7129c4702e1826591--coruscating-cascaron-3eb916.netlify.app/
+
+---
+
+## 🧠 About the Project
+
+SmartStudy AI is a SaaS-style AI learning platform where users can:
+- Get AI explanations of any topic
+- Generate quizzes for practice
+- Create structured study plans
+- Save notes and AI responses
+- Manage tasks and learning progress
+
+This project combines AI + Full Stack Development + Database + Modern SaaS UI.
+
+---
+
+## ⚙️ Tech Stack
+
+Frontend:
+- Next.js (App Router)
+- React.js
+- TypeScript
+- Tailwind CSS
+
+Backend:
+- Next.js API Routes
+- Node.js
+
+Database:
+- PostgreSQL (Neon DB)
+- Prisma ORM
+
+AI Integration:
+- OpenRouter API (LLMs)
+
+Deployment:
+- Netlify
+- GitHub
+
+---
+
+## 🤖 AI Features
+
+- Explain topics in simple language
+- Generate quizzes automatically
+- Create study plans
+- Smart AI responses using LLMs
+
+---
+
+## 🗄 Database Models
+
+Task:
+- title
+- completed
+- createdAt
+
+Note:
+- title
+- content
+- type
+- createdAt
+
+AIRequest:
+- type
+- input
+- output
+- createdAt
+
+---
+
+## 📸 Features
+
+- Modern SaaS dashboard UI
+- Sidebar navigation system
+- AI chat-style responses
+- Notes saving system
+- Full CRUD operations
+- Responsive design
+- Smooth UI transitions
+
+---
+
+## 📦 Installation
+
+git clone https://github.com/your-username/smartstudy-ai.git
+cd smartstudy-ai
+npm install
+
+---
+
+## ⚙️ Environment Variables
+
+DATABASE_URL=your_neon_db_url
+OPENROUTER_API_KEY=your_api_key
+
+---
+
+## 🚀 Run Project
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧠 What I Learned
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Full-stack Next.js development
+- Prisma ORM with PostgreSQL
+- AI integration using LLM APIs
+- SaaS-level UI/UX design
+- Deployment workflow
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 💡 Future Improvements
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Authentication system (login/signup)
+- AI history tracking
+- Subscription model (SaaS)
+- Mobile app version
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 👩‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Muzna Ali Siddiqui Sabzwari  
+Full Stack Developer (MERN + Next.js + AI Integration)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+⭐ If you like this project, give it a star on GitHub!
