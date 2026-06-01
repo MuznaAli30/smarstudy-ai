@@ -33,8 +33,8 @@ export function NotesPanel() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto animate-fade-in">
-      <div className="flex items-start justify-between mb-8">
+    <div className="mx-auto w-full max-w-4xl animate-fade-in">
+      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
         <PageHeader
           title="My Notes"
           description="Saved AI explanations, quizzes, and study plans."
@@ -42,7 +42,7 @@ export function NotesPanel() {
         <button
           onClick={handleExport}
           disabled={notes.length === 0}
-          className="btn-primary px-5 py-2.5 rounded-xl text-sm font-medium disabled:opacity-50 shrink-0 mt-1"
+          className="btn-primary w-full shrink-0 rounded-xl px-5 py-2.5 text-sm font-medium disabled:opacity-50 sm:w-auto"
         >
           Export All to PDF
         </button>
@@ -79,25 +79,27 @@ export function NotesPanel() {
           {notes.map((note) => (
             <div
               key={note.id}
-              className="glass-card rounded-2xl p-5 card-hover animate-fade-in"
+              className="glass-card card-hover animate-fade-in rounded-2xl p-4 sm:p-5"
             >
-              <div className="flex items-start justify-between gap-4 mb-3">
-                <div>
-                  <h3 className="font-semibold text-base">{note.title}</h3>
-                  <p className="text-xs text-muted mt-1">
+              <div className="mb-3 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
+                <div className="min-w-0">
+                  <h3 className="break-words text-base font-semibold">
+                    {note.title}
+                  </h3>
+                  <p className="mt-1 text-xs text-muted">
                     {new Date(note.createdAt).toLocaleString()}
                   </p>
                 </div>
                 <span
-                  className={`text-xs font-medium px-2.5 py-1 rounded-full shrink-0 ${typeColors[note.type] ?? ""}`}
+                  className={`w-fit shrink-0 rounded-full px-2.5 py-1 text-xs font-medium ${typeColors[note.type] ?? ""}`}
                 >
                   {noteTypeLabel(note.type)}
                 </span>
               </div>
-              <p className="text-sm text-muted whitespace-pre-wrap line-clamp-4">
+              <p className="line-clamp-4 break-words text-sm text-muted whitespace-pre-wrap">
                 {note.content}
               </p>
-              <div className="flex gap-2 mt-4 pt-3 border-t border-slate-200/40">
+              <div className="mt-4 flex flex-wrap gap-2 border-t border-slate-200/40 pt-3">
                 <button
                   onClick={() => deleteNote(note.id)}
                   className="btn-secondary text-xs px-3 py-1.5 rounded-lg text-red-600"

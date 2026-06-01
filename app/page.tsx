@@ -7,10 +7,10 @@ export default function Home() {
         <div className="w-16 h-16 rounded-2xl gradient-bg flex items-center justify-center text-white text-2xl font-bold mx-auto mb-6 shadow-lg shadow-indigo-500/30">
           S
         </div>
-        <h1 className="text-4xl font-bold gradient-text mb-3">
+        <h1 className="mb-3 text-3xl font-bold gradient-text sm:text-4xl">
           SmartStudy AI
         </h1>
-        <p className="text-muted mb-8 max-w-md mx-auto">
+        <p className="mx-auto mb-8 max-w-md text-sm text-muted sm:text-base">
           Your AI-powered study companion. Explain topics, generate quizzes,
           create study plans, and organize notes — all in one place.
         </p>

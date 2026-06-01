@@ -29,13 +29,13 @@ export function DashboardContent() {
   const { stats, loading } = useStats();
 
   return (
-    <div className="max-w-5xl mx-auto animate-fade-in">
+    <div className="mx-auto w-full max-w-5xl animate-fade-in">
       <PageHeader
         title="Welcome back 👋"
         description="Your AI-powered study workspace at a glance."
       />
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
+      <div className="mb-8 grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4 sm:mb-10">
         <StatCard
           title="Total Notes"
           value={stats?.totalNotes ?? 0}
@@ -69,8 +69,8 @@ export function DashboardContent() {
         />
       </div>
 
-      <h2 className="text-xl font-semibold mb-4">Quick Actions</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <h2 className="mb-4 text-lg font-semibold sm:text-xl">Quick Actions</h2>
+      <div className="grid grid-cols-1 gap-4 md:grid-cols-2 xl:grid-cols-4">
         {quickActions.map((action) => (
           <Link
             key={action.href}

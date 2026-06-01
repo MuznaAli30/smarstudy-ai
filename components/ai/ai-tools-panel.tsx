@@ -56,31 +56,31 @@ export function AIToolsPanel() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto animate-fade-in">
+    <div className="mx-auto w-full max-w-3xl animate-fade-in">
       <PageHeader
         title="AI Study Assistant"
         description="Explain topics, generate quizzes, and create study plans with AI."
       />
 
-      <div className="glass-card rounded-2xl p-5 mb-6 card-hover">
-        <label className="block text-sm font-medium mb-2">
+      <div className="glass-card card-hover mb-6 rounded-2xl p-4 sm:p-5">
+        <label className="mb-2 block text-sm font-medium">
           Your study material
         </label>
         <textarea
-          className="w-full rounded-xl border border-slate-200/60 bg-white/50 dark:bg-slate-800/50 p-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400/50 resize-none transition-shadow"
+          className="w-full min-w-0 resize-none rounded-xl border border-slate-200/60 bg-white/50 p-3 text-sm transition-shadow focus:outline-none focus:ring-2 focus:ring-indigo-400/50 dark:bg-slate-800/50 sm:p-4"
           rows={5}
           placeholder="Paste your notes, topic, or question here..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         />
 
-        <div className="flex flex-wrap gap-3 mt-4">
+        <div className="mt-4 flex flex-wrap gap-2 sm:gap-3">
           {aiActions.map((action) => (
             <button
               key={action.type}
               onClick={() => handleRun(action.type)}
               disabled={loading}
-              className="btn-primary px-5 py-2.5 rounded-xl text-sm font-medium disabled:opacity-50 flex items-center gap-2"
+              className="btn-primary flex min-w-0 flex-1 items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium disabled:opacity-50 sm:flex-none sm:px-5"
             >
               <span>{action.icon}</span>
               {action.label}
@@ -89,9 +89,9 @@ export function AIToolsPanel() {
         </div>
       </div>
 
-      <div className="space-y-4 min-h-[120px]">
+      <div className="min-h-[120px] space-y-4 overflow-hidden">
         {loading && (
-          <div className="glass-card rounded-2xl p-5">
+          <div className="glass-card rounded-2xl p-4 sm:p-5">
             <LoadingSpinner />
             <ChatSkeleton />
           </div>
@@ -113,7 +113,7 @@ export function AIToolsPanel() {
         )}
 
         {!loading && !result && (
-          <div className="glass-card rounded-2xl p-8 text-center text-muted">
+          <div className="glass-card rounded-2xl p-6 text-center text-muted sm:p-8">
             <span className="text-4xl block mb-3">🤖</span>
             <p className="text-sm">
               Enter your material above and choose an AI action to get started.

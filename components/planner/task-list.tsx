@@ -12,7 +12,7 @@ interface TaskListProps {
 
 export function TaskList({ tasks, onToggle, onDelete }: TaskListProps) {
   return (
-    <div className="glass-card rounded-2xl p-6 card-hover">
+    <div className="glass-card card-hover rounded-2xl p-4 sm:p-6">
       <h2 className="font-semibold mb-4">Your Tasks</h2>
 
       {tasks.length === 0 ? (

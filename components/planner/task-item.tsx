@@ -10,17 +10,17 @@ interface TaskItemProps {
 
 export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
   return (
-    <div className="flex justify-between items-center border border-slate-200/40 p-3 rounded-xl transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
-      <div className="flex items-center gap-3">
+    <div className="flex items-center justify-between gap-3 rounded-xl border border-slate-200/40 p-3 transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-800/30">
+      <div className="flex min-w-0 flex-1 items-center gap-3">
         <input
           type="checkbox"
           checked={task.completed}
           onChange={(e) => onToggle(task.id, e.target.checked)}
-          className="w-4 h-4 rounded accent-indigo-500"
+          className="h-4 w-4 shrink-0 rounded accent-indigo-500"
         />
 
         <span
-          className={`text-sm ${task.completed ? "line-through text-muted" : ""}`}
+          className={`break-words text-sm ${task.completed ? "text-muted line-through" : ""}`}
         >
           {task.title}
         </span>
@@ -28,7 +28,7 @@ export function TaskItem({ task, onToggle, onDelete }: TaskItemProps) {
 
       <button
         onClick={() => onDelete(task.id)}
-        className="text-xs text-red-500 hover:text-red-700 px-2 py-1 rounded-lg hover:bg-red-50 transition-colors"
+        className="shrink-0 rounded-lg px-2 py-1 text-xs text-red-500 transition-colors hover:bg-red-50 hover:text-red-700"
       >
         Delete
       </button>

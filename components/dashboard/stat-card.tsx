@@ -18,13 +18,15 @@ export function StatCard({
   loading,
 }: StatCardProps) {
   const content = (
-    <div className="glass-card rounded-2xl p-6 card-hover h-full">
-      <div className="flex items-start justify-between mb-4">
-        <span className="text-2xl">{icon}</span>
+    <div className="glass-card card-hover h-full rounded-2xl p-4 sm:p-6">
+      <div className="mb-3 flex items-start justify-between gap-2 sm:mb-4">
+        <span className="text-xl sm:text-2xl">{icon}</span>
         {loading ? (
           <div className="h-8 w-16 animate-shimmer rounded-lg" />
         ) : (
-          <span className="text-2xl font-bold gradient-text">{value}</span>
+          <span className="truncate text-xl font-bold gradient-text sm:text-2xl">
+            {value}
+          </span>
         )}
       </div>
       <h2 className="font-semibold text-base mb-1">{title}</h2>

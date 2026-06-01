@@ -5,10 +5,14 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, description }: PageHeaderProps) {
   return (
-    <div className="mb-8 animate-fade-in">
-      <h1 className="text-3xl font-bold tracking-tight gradient-text">{title}</h1>
+    <div className="mb-6 animate-fade-in sm:mb-8">
+      <h1 className="text-2xl font-bold tracking-tight gradient-text sm:text-3xl">
+        {title}
+      </h1>
       {description && (
-        <p className="mt-2 text-muted text-base">{description}</p>
+        <p className="mt-1.5 text-sm text-muted sm:mt-2 sm:text-base">
+          {description}
+        </p>
       )}
     </div>
   );

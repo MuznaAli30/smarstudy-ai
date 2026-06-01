@@ -77,8 +77,8 @@ export function HistoryPanel() {
   };
 
   return (
-    <div className="max-w-4xl mx-auto animate-fade-in">
-      <div className="flex items-start justify-between mb-8">
+    <div className="mx-auto w-full max-w-4xl animate-fade-in">
+      <div className="mb-6 flex flex-col gap-4 sm:mb-8 sm:flex-row sm:items-start sm:justify-between">
         <PageHeader
           title="AI History"
           description="Browse your past AI requests and responses."
@@ -87,7 +87,7 @@ export function HistoryPanel() {
           <button
             onClick={clearAll}
             disabled={clearing}
-            className="btn-secondary px-4 py-2 rounded-xl text-sm font-medium text-red-600 disabled:opacity-50 shrink-0 mt-1"
+            className="btn-secondary w-full shrink-0 rounded-xl px-4 py-2 text-sm font-medium text-red-600 disabled:opacity-50 sm:w-auto"
           >
             {clearing ? "Clearing..." : "Clear All"}
           </button>
@@ -125,26 +125,26 @@ export function HistoryPanel() {
           {history.map((item) => (
             <div
               key={item.id}
-              className="glass-card rounded-2xl p-5 card-hover animate-fade-in"
+              className="glass-card card-hover animate-fade-in rounded-2xl p-4 sm:p-5"
             >
               <div
-                className="flex items-center justify-between gap-4 cursor-pointer"
+                className="flex cursor-pointer flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
                 onClick={() =>
                   setExpanded(expanded === item.id ? null : item.id)
                 }
               >
-                <div className="min-w-0">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-indigo-100 text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
+                <div className="min-w-0 flex-1">
+                  <div className="mb-1 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-indigo-100 px-2 py-0.5 text-xs font-semibold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                       {typeLabels[item.type] ?? item.type}
                     </span>
                     <span className="text-xs text-muted">
                       {new Date(item.createdAt).toLocaleString()}
                     </span>
                   </div>
-                  <p className="text-sm truncate">{item.input}</p>
+                  <p className="truncate text-sm">{item.input}</p>
                 </div>
-                <div className="flex items-center gap-2 shrink-0">
+                <div className="flex shrink-0 items-center justify-between gap-2 sm:justify-end">
                   <button
                     onClick={(e) => {
                       e.stopPropagation();
@@ -162,9 +162,11 @@ export function HistoryPanel() {
               </div>
 
               {expanded === item.id && (
-                <div className="mt-4 pt-4 border-t border-slate-200/40">
-                  <p className="text-xs font-medium text-muted mb-2">Response</p>
-                  <p className="text-sm whitespace-pre-wrap">{item.output}</p>
+                <div className="mt-4 border-t border-slate-200/40 pt-4">
+                  <p className="mb-2 text-xs font-medium text-muted">Response</p>
+                  <p className="break-words text-sm whitespace-pre-wrap">
+                    {item.output}
+                  </p>
                 </div>
               )}
             </div>

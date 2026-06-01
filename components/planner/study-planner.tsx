@@ -17,7 +17,7 @@ export function StudyPlanner() {
   };
 
   return (
-    <div className="max-w-3xl mx-auto animate-fade-in">
+    <div className="mx-auto w-full max-w-3xl animate-fade-in">
       <PageHeader
         title="Study Planner"
         description="Track your study tasks and stay organized."

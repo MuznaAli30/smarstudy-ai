@@ -12,7 +12,7 @@ export function AddTaskForm({
   onSubmit,
 }: AddTaskFormProps) {
   return (
-    <div className="glass-card rounded-2xl p-6 mb-6 card-hover">
+    <div className="glass-card card-hover mb-6 rounded-2xl p-4 sm:p-6">
       <h2 className="font-semibold mb-3">Add New Task</h2>
 
       <input
@@ -25,7 +25,7 @@ export function AddTaskForm({
 
       <button
         onClick={onSubmit}
-        className="btn-primary px-5 py-2.5 rounded-xl text-sm font-medium"
+        className="btn-primary w-full rounded-xl px-5 py-2.5 text-sm font-medium sm:w-auto"
       >
         Add Task
       </button>
